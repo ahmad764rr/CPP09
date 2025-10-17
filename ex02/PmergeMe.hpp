@@ -4,22 +4,26 @@
 #include <vector>
 #include <deque>
 #include <string>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
 
 class PmergeMe {
 private:
-    std::vector<int> vec;
-    std::deque<int> deq;
+    std::vector<int> vecData;
+    std::deque<int> deqData;
+    std::vector<int> original;
     
-    // Vector sorting
-    void sortVector(std::vector<int>& arr);
-    void insertIntoVector(std::vector<int>& sorted, int value);
+    void mergeInsertVector(std::vector<int>& arr);
+    void binaryInsertVec(std::vector<int>& arr, int value);
     
-    // Deque sorting
-    void sortDeque(std::deque<int>& arr);
-    void insertIntoDeque(std::deque<int>& sorted, int value);
+    void mergeInsertDeque(std::deque<int>& arr);
+    void binaryInsertDeq(std::deque<int>& arr, int value);
     
-    // Validation
-    bool isValidNumber(const std::string& str);
+    bool checkNumber(const std::string& str);
+    size_t jacobsthal(size_t n);
+    void generateJacobsthalSeq(std::vector<size_t>& seq, size_t limit);
 
 public:
     PmergeMe();
@@ -27,7 +31,7 @@ public:
     PmergeMe& operator=(const PmergeMe& other);
     ~PmergeMe();
     
-    void run(int argc, char** argv);
+    void process(int argc, char** argv);
 };
 
 #endif

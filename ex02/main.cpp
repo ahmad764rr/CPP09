@@ -1,5 +1,4 @@
 #include "PmergeMe.hpp"
-#include <iostream>
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -8,7 +7,7 @@ int main(int argc, char** argv) {
     }
     
     PmergeMe sorter;
-    sorter.run(argc, argv);
+    sorter.process(argc, argv);
     
     return 0;
 }
